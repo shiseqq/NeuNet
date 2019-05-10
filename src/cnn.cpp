@@ -19,3 +19,21 @@ void teach()
     Py_DECREF(pFunc);
     Py_Finalize();
 }
+
+int analysis(std::string str)
+{
+    Py_Initialize();
+    PyObject *pName, *pModule, *pFunc, *pValue, *pArgs;
+    pName = PyUnicode_FromString("image_analysis");
+    pModule = PyImport_Import(pName);
+    Py_DECREF(pName);
+    if (pModule) {
+        pFunc = PyObject_GetAttrString(pModule, "analysis");
+        pArgs = PyTuple_New(1);
+        PyTuple_SetItem(pArgs, 0, PyUnicode_FromString(str.c_str()));
+        pValue = PyObject_CallObject(pFunc, pArgs);
+        return PyLong_AsLong(pValue);
+    }
+    Py_Finalize();
+    return -1;
+}
