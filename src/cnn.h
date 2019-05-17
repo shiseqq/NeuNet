@@ -7,5 +7,6 @@ using namespace std;
 
 void teach();
 int analysis(std::string);
+void startcnn(PyObject*&);
 
 #endif

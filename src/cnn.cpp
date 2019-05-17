@@ -37,3 +37,17 @@ int analysis(std::string str)
     Py_Finalize();
     return -1;
 }
+
+void startcnn(PyObject*& model)
+{
+    Py_Initialize();
+    PyObject *pName, *pModule, *pFunc, *pArgs;
+    pName = PyUnicode_FromString("startcnn");
+    pModule = PyImport_Import(pName);
+    Py_DECREF(pName);
+    if (pModule) {
+        pFunc = PyObject_GetAttrString(pModule, "startcnn");
+        pArgs = PyTuple_New(0);
+        model = PyObject_CallObject(pFunc, pArgs);
+    }
+}
