@@ -1,0 +1,18 @@
+language: 
+  - cpp
+  - python
+
+compiler: gcc
+
+dist: xenial
+
+before_install:
+  - sudo add-apt-repository ppa:deadsnakes/ppa -y
+  - sudo apt-get update -q
+  - sudo apt-get install python3.6 -y
+  - sudo apt-get install python3.6-dev -y
+
+script:
+  - make
+  - cd src/
+  - ls *.cpp *.h | xargs clang-format -i && git diff --exit-code
