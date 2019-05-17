@@ -20,7 +20,7 @@ void teach()
     Py_Finalize();
 }
 
-int analysis(std::string str)
+int analysis(std::string str, PyObject*& model)
 {
     Py_Initialize();
     PyObject *pName, *pModule, *pFunc, *pValue, *pArgs;
@@ -29,8 +29,9 @@ int analysis(std::string str)
     Py_DECREF(pName);
     if (pModule) {
         pFunc = PyObject_GetAttrString(pModule, "analysis");
-        pArgs = PyTuple_New(1);
+        pArgs = PyTuple_New(2);
         PyTuple_SetItem(pArgs, 0, PyUnicode_FromString(str.c_str()));
+        PyTuple_SetItem(pArgs, 1, model);
         pValue = PyObject_CallObject(pFunc, pArgs);
         return PyLong_AsLong(pValue);
     }

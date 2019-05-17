@@ -6,7 +6,7 @@
 using namespace std;
 
 void teach();
-int analysis(std::string);
+int analysis(std::string, PyObject*&);
 void startcnn(PyObject*&);
 
 #endif
