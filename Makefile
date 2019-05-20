@@ -1,6 +1,7 @@
 CC = g++
 EXECUTABLE = bin/main.out
 PYTHONFLAGS = `python3.6-config --ldflags`
+GRAPHICFLAGS = -lsfml-graphics -lsfml-window -lsfml-system -std=c++11
 CFLAGS = -Wall -Werror -c -MD $(PYTHONFLAGS)
 SOURCES = $(wildcard src/*.cpp)
 OBJECTS = $(patsubst src/%.cpp, build/%.o, $(wildcard src/*.cpp))
