@@ -20,7 +20,7 @@ void teach()
     Py_Finalize();
 }
 
-int analysis(std::string str, PyObject*& model)
+int analysis(string str, PyObject*& model)
 {
     Py_Initialize();
     PyObject *pName, *pModule, *pFunc, *pValue, *pArgs;
