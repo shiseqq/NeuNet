@@ -52,3 +52,23 @@ void startcnn(PyObject*& model)
         model = PyObject_CallObject(pFunc, pArgs);
     }
 }
+
+void lerarnpicture(string img_path, int target, PyObject*& model)
+{
+    Py_Initialize();
+    PyObject *pName, *pModule, *pFunc, *pArgs;
+    pName = PyUnicode_FromString("learn_picture");
+    pModule = PyImport_Import(pName);
+    Py_DECREF(pName);
+    if (pModule) {
+        pFunc = PyObject_GetAttrString(pModule, "lerarnpicture");
+        pArgs = PyTuple_New(3);
+        PyTuple_SetItem(pArgs, 0, PyUnicode_FromString(img_path.c_str()));
+        PyTuple_SetItem(pArgs, 1, PyLong_FromLong(target));
+        PyTuple_SetItem(pArgs, 2, model);
+        PyObject_CallObject(pFunc, pArgs);
+    }
+    Py_DECREF(pModule);
+    Py_DECREF(pFunc);
+    Py_DECREF(pArgs);
+}
