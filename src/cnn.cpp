@@ -2,7 +2,6 @@
 
 void teach()
 {
-    Py_Initialize();
     PyObject *pArgs, *pModule, *pFunc, *pName;
     pName = PyUnicode_FromString("teach_сnn");
     pModule = PyImport_Import(pName);
@@ -22,7 +21,6 @@ void teach()
 
 int analysis(string str, PyObject*& model)
 {
-    Py_Initialize();
     PyObject *pName, *pModule, *pFunc, *pValue, *pArgs;
     pName = PyUnicode_FromString("image_analysis");
     pModule = PyImport_Import(pName);
@@ -41,7 +39,6 @@ int analysis(string str, PyObject*& model)
 
 void startcnn(PyObject*& model)
 {
-    Py_Initialize();
     PyObject *pName, *pModule, *pFunc, *pArgs;
     pName = PyUnicode_FromString("startcnn");
     pModule = PyImport_Import(pName);
@@ -55,7 +52,6 @@ void startcnn(PyObject*& model)
 
 void lerarnpicture(string img_path, int target, PyObject*& model)
 {
-    Py_Initialize();
     PyObject *pName, *pModule, *pFunc, *pArgs;
     pName = PyUnicode_FromString("learn_picture");
     pModule = PyImport_Import(pName);
