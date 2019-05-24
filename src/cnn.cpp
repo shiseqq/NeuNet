@@ -16,7 +16,6 @@ void teach()
     Py_XDECREF(pModule);
     Py_XDECREF(pArgs);
     Py_XDECREF(pFunc);
-    Py_Finalize();
 }
 
 int analysis(string str, PyObject*& model)
@@ -39,7 +38,6 @@ int analysis(string str, PyObject*& model)
     Py_XDECREF(pModule);
     Py_XDECREF(pFunc);
     Py_XDECREF(pArgs);
-    Py_Finalize();
     return -1;
 }
 
