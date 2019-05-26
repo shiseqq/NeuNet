@@ -14,4 +14,4 @@ before_install:
 
 script:
   - make
-  - ls *.cpp *.h | xargs clang-format -i && git diff --exit-code
+  - ls src/*.h src/*.cpp | xargs clang-format -i && git diff --exit-code
