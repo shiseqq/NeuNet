@@ -6,5 +6,6 @@
 using namespace std;
 
 string selectfile();
+int wininp();
 
 #endif
