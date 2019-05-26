@@ -1,19 +1,11 @@
 import numpy as np
 from keras.preprocessing import image
-from keras.models import model_from_json
 
 
-def analysis(img_path):
-    fl = open("../CNN/model.json", "r")
-    json = fl.read()
-    fl.close()
-    model = model_from_json(json)
-    model.load_weights("../CNN/model_weights.h5")
-    model.compile(loss="categorical_crossentropy",
-                  optimizer="adam", metrics=["accuracy"])
+def analysis(img_path, model):
     img = image.load_img(img_path, target_size=(
         28, 28), color_mode='grayscale')
-
+        
     x = image.img_to_array(img)
     x = 255 - x
     x /= 255

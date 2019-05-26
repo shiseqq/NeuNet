@@ -6,6 +6,8 @@
 using namespace std;
 
 void teach();
-int analysis(std::string);
+int analysis(string, PyObject*&);
+void startcnn(PyObject*&);
+void lerarnpicture(string, int, PyObject*&);
 
 #endif
