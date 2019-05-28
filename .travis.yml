@@ -11,6 +11,11 @@ before_install:
   - sudo apt-get update -q
   - sudo apt-get install python3.6 -y
   - sudo apt-get install python3.6-dev -y
+  - sudo apt install libfreetype6-dev libxrandr-dev libudev-dev libogg-dev libflac-dev libvorbis-dev libopenal-dev
+  - sudo apt install wget
+  - wget https://www.sfml-dev.org/files/SFML-2.5.1-linux-gcc-64-bit.tar.gz
+  - tar xvzf SFML-2.5.1-linux-gcc-64-bit.tar.gz
+  - cd SFML-2.5.1 
 
 script:
   - make
