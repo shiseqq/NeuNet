@@ -10,7 +10,7 @@ DEPENDENCIES = $(patsubst build/%.o, build/%.d, $(wildcard build/*.o))
 all : $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE) : $(OBJECTS)
-	$(CC) $^ -o $@ -std=c++11 $(PYTHONFLAGS)
+	$(CC) $^ -o $@ -std=c++11 $(PYTHONFLAGS) $(GRAPHICFLAGS)
 
 build/%.o : src/%.cpp
 	$(CC) $(CFLAGS) $< -o $@ -std=c++11
