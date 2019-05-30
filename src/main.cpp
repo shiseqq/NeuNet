@@ -19,7 +19,6 @@ int main()
     Texture bg0, but0, but1;
     Py_Initialize();
     PyRun_SimpleString("import sys");
-    PyRun_SimpleString("import os");
     PyRun_SimpleString("sys.path.insert(1, \"../src\")");
     Sprite bg, button0, button1;
     Font arial;
