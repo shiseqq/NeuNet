@@ -12,11 +12,10 @@ using namespace std;
 using namespace sf;
 
 RenderWindow window(VideoMode(1640, 1050), "NueNet");
-int t;
-string s;
 
 int main()
 {
+    string s;
     Texture bg0, but0, but1;
     Py_Initialize();
     PyRun_SimpleString("import sys");
@@ -84,8 +83,10 @@ int main()
             this_thread::sleep_for(chrono::milliseconds(80));
             s = selectfile();
             if (s.size() > 0) {
+                int t;
                 t = analysis(s, model);
                 screenans(&window, t, s, model);
+                startcnn(model);
             }
         }
         if (Mouse::isButtonPressed(Mouse::Left)
