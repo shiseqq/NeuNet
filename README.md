@@ -11,7 +11,8 @@
     - TensorFlow  
     - Keras  
     - Numpy  
-    - Tkinter  
+    - Tkinter    
+    - Pillow  
 
 # UPD
 Данная программа предназначена только для операционной системы Linux.
