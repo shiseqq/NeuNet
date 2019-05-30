@@ -13,6 +13,11 @@ public:
         startcnn(model);
         TS_ASSERT_EQUALS(analysis("../test/numbers/0.png", model), 0);
     }
+    void test1()
+    {
+        startcnn(model);
+        TS_ASSERT_EQUALS(analysis("../test/numbers/1.png", model), 1);
+    }
     void test2()
     {
         startcnn(model);
