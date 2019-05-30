@@ -21,6 +21,12 @@ before_install:
   - sudo cp -R share/SFML/ /usr/share
   - cd .. 
   - sudo apt-get install cxxtest
+  - sudo -H apt install python3-pip
+  - sudo -H pip3 install --upgrade pip
+  - sudo -H python3.6 -m pip install --upgrade setuptools
+  - sudo -H python3.6 -m pip install Keras
+  - sudo -H python3.6 -m pip install tensorflow
+  - sudo -H python3.6 -m pip install numpy
 
 script:
   - make
