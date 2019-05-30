@@ -5,7 +5,7 @@ from keras.preprocessing import image
 def analysis(img_path, model):
     img = image.load_img(img_path, target_size=(
         28, 28), color_mode='grayscale')
-        
+
     x = image.img_to_array(img)
     x = 255 - x
     x /= 255

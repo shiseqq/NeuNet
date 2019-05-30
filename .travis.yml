@@ -27,6 +27,7 @@ before_install:
   - sudo -H python3.6 -m pip install Keras
   - sudo -H python3.6 -m pip install tensorflow
   - sudo -H python3.6 -m pip install numpy
+  - sudo -H python3.6 -m pip install pillow
 
 script:
   - make
