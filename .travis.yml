@@ -16,7 +16,9 @@ before_install:
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-linux-gcc-64-bit.tar.gz
   - tar xvzf SFML-2.5.1-linux-gcc-64-bit.tar.gz
   - cd SFML-2.5.1 
+  - sudo apt-get install cxxtest
 
 script:
   - make
+  - make test
   - ls src/*.h src/*.cpp | xargs clang-format -i && git diff --exit-code
