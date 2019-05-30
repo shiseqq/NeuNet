@@ -19,8 +19,10 @@ before_install:
   - sudo cp -R include/SFML/ /usr/include/
   - sudo cp $(ls lib/*.so*) /usr/lib/
   - sudo cp -R share/SFML/ /usr/share
-  - cd ..
+  - cd .. 
+  - sudo apt-get install cxxtest
 
 script:
   - make
+  - make test
   - ls src/*.h src/*.cpp | xargs clang-format -i && git diff --exit-code
