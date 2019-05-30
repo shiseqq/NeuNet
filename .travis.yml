@@ -15,7 +15,11 @@ before_install:
   - sudo apt install wget
   - wget https://www.sfml-dev.org/files/SFML-2.5.1-linux-gcc-64-bit.tar.gz
   - tar xvzf SFML-2.5.1-linux-gcc-64-bit.tar.gz
-  - cd SFML-2.5.1 
+  - cd SFML-2.5.1/
+  - sudo cp -R include/SFML/ /usr/include/
+  - sudo cp $(ls lib/*.so*) /usr/lib/
+  - sudo cp -R share/SFML/ /usr/share
+  - cd ..
 
 script:
   - make
